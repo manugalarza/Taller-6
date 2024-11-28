@@ -28,17 +28,25 @@ public class PanelEditarRestaurante extends JPanel
 
     public PanelEditarRestaurante( )
     {
+    	setLayout(new GridLayout(4, 2, 5, 5));
+    	
         // Crea el campo para el nombre con una etiqueta al frente
-        // TODO completar
+    	JLabel lblNombre = new JLabel("Nombre ");
+        txtNombre = new JTextField(20);
+        add(lblNombre);
+        add(txtNombre);
 
         // Crea el selector para la calificación con una etiqueta al frente
-        // TODO completar
+        JLabel lblCalificacion = new JLabel("Calificación ");
+        cbbCalificacion = new JComboBox<>(new String[] { "1", "2", "3", "4", "5" });
+        add(lblCalificacion);
+        add(cbbCalificacion);
 
         // Crea el selector para indicar si ya ha sido visitado, con una etiqueta al frente
-        // TODO completar
-
-        // Agregar todos los elementos al panel
-        // TODO completar
+        JLabel lblVisitado = new JLabel("Visitado ");
+        cbbVisitado = new JComboBox<>(new String[] { "Sí", "No" });
+        add(lblVisitado);
+        add(cbbVisitado);
 
     }
 
@@ -48,8 +56,8 @@ public class PanelEditarRestaurante extends JPanel
      */
     public boolean getVisitado( )
     {
-        // TODO completar
-        return false;
+    	String seleccion = (String) cbbVisitado.getSelectedItem();
+        return seleccion.equals("Sí");
     }
 
     /**
@@ -68,7 +76,6 @@ public class PanelEditarRestaurante extends JPanel
      */
     public String getNombre( )
     {
-        // TODO completar
-        return "";
+    	return txtNombre.getText();
     }
 }
